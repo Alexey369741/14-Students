@@ -4,12 +4,12 @@ class Group {
     #students = [];
 
     addStudent(student) {
-        if(this.isStudent(student)) {
+        if (this.isStudent(student)) {
             this.#students.push(student);
         }
     }
 
-    isStudent() {
+    isStudent(student) {
         return student instanceof Student;
     }
 
@@ -20,9 +20,7 @@ class Group {
     }
 
     getMarksSum() {
-        return this.students.reduce((acc,student) => {
-            return acc + student.getAverageMark();
-        }, 0)
+        return this.students.reduce((acc, student) => acc + student.getAverageMark(), 0)
     }
 
     get students() {
